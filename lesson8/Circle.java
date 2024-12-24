@@ -1,21 +1,24 @@
 package lesson8;
 
 public class Circle {
-         double radius = 0;
+        private double radius = 0;
 
     public Circle (double radius) {
         this.radius = radius;
     }
 
-    public void setRadius(double radius) {
+    void setRadius(double radius) {
+        if (this.radius < 0) {
+            throw new IllegalArgumentException("Радиус должен быть положительным");
+        }
         this.radius = radius;
     }
 
-    public double getRadius() {
+    double getRadius() {
         return radius;
     }
 
     public double getArea() {
-        return Math.PI * 2 * getRadius();
+        return Math.PI * Math.pow(getRadius(), 2);
     }
 }

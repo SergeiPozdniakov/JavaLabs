@@ -1,12 +1,10 @@
-package testpackage;
-
-import lesson8.Circle;
+package lesson8;
 
 public class TestCircle {
 
         private final double EPSILON = 0.00001;
 
-        private boolean compareDouble(double a, double b) {
+    private boolean compareDouble(double a, double b) {
             return Math.abs(a - b) < EPSILON;
         }
 
