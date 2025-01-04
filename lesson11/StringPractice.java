@@ -6,7 +6,7 @@ public class StringPractice {
 		String text = "В тексте, который вы видите на этом 12345 изображении, посчитайте количество букв 'е' в каждом слове напишите регулярное выражение для проверки телефона в международном формате с помощью регулярного выражения напишите функцию удаления всех букв и пробелов из текста";
         char character = 'е';
 		
-        System.out.println(calcChar(text, character));
+        calcChar(text, character);
         
         // Task 2
         regexMobile("+72342342364");
@@ -15,7 +15,7 @@ public class StringPractice {
         // Task 3
         regexDel(text);
        
-        
+        // Workshop 
 		/*len();
         split();
         trim();
@@ -27,10 +27,18 @@ public class StringPractice {
         passwordRegex();*/
     }
 
-	private static int calcChar (String input, char character) {
-	return (int)input.chars()
-		         .filter(ch -> ch == character)
-			     .count();
+	private static void calcChar (String input, char character) {
+		String[] words = input.split(" ");
+		
+	    for (int i=0; i < words.length; i++) {
+	    	int count=0;
+	    	for (int j=0; j < words[i].length(); j++) {
+				if (words[i].charAt(j) == character ) {
+	    			count++;
+	    		}
+	    	}
+	    	System.out.println("Слово " + (i+1) + ": " + count + " букв '" + character + "'");
+	    }
 	}
 	
 	public static void regexMobile(String mobile) {
