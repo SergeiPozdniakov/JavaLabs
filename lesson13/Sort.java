@@ -1,5 +1,6 @@
 package lesson13;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class Sort {
@@ -20,15 +21,33 @@ public class Sort {
 	}
 	
 	static public void main(String[] args) {
-		int size = 10;
+		int size = 100000;
 		int[] array = new int [size];
-		printArray(array);
+		//printArray(array);
 		generateNumbers(array, size);
-		printArray(array);
-	//	BubbleSort.bubbleSort(array, size);
-	//	InsertionSort.insertionSort(array);
+		//printArray(array);
+		long startTime = System.currentTimeMillis();
+	    BubbleSort.bubbleSort(array, size);
+		long endTime = System.currentTimeMillis();
+		System.out.println("Bubble Sort: " + (endTime - startTime));
+		
+		generateNumbers(array, size);
+		startTime = System.currentTimeMillis();
+		InsertionSort.insertionSort(array);
+		endTime = System.currentTimeMillis();
+		System.out.println("Insertion Sort " + (endTime - startTime));
+		
+		generateNumbers(array, size);
+		startTime = System.currentTimeMillis();
 		SelectSort.selectionSort(array);
-		printArray(array);
+		endTime = System.currentTimeMillis();
+		System.out.println("Select Sort: " + (endTime - startTime));
+		
+		generateNumbers(array, size);
+		startTime = System.currentTimeMillis();
+		Arrays.sort(array);
+		endTime = System.currentTimeMillis();
+		System.out.println("Arrays.sort(): " + (endTime - startTime));
+		
 	}
-
 }
