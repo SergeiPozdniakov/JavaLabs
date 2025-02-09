@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact name="Find:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/Find_jar</output-path>
+    <root id="root">
+      <element id="archive" name="Find.jar">
+        <element id="module-output" name="Find" />
+      </element>
+    </root>
+  </artifact>
+</component>
