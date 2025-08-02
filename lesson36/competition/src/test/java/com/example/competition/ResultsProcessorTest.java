@@ -91,4 +91,19 @@ class ResultsProcessorTest {
             }
         }
     }
+
+    @Test
+    void loadResults_populatesDataCorrectly() throws IOException {
+        ResultsProcessor processor = new ResultsProcessor();
+        processor.loadResults(testFile.toString());
+
+        // Проверяем, что данные загружены и фильтруются правильно
+        List<Athlete> men10km = processor.getTopNRunners(10, "10 км", "М");
+        List<Athlete> women5km = processor.getTopNRunners(10, "5 км", "Ж");
+
+        assertEquals(2, men10km.size(), "2 male runners on 10 km");
+        assertEquals(1, women5km.size(), "1 female runner on 5 km");
+
+        assertEquals("Сергей Васильев", men10km.get(0).getFullName()); // fastest
+    }
 }
