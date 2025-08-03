@@ -1,0 +1,11 @@
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\DetailsServlet.java
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\ErrorServlet.java
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\ExpensesServlet.java
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\filters\AuthenticationFilter.java
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\filters\ExpensesFilter.java
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\IncomesServlet.java
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\listeners\LogAttributeChanges.java
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\LoginServlet.java
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\model\Expense.java
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\model\Transaction.java
+C:\Users\sergei\Desktop\PersFinance\src\main\java\ru\productstar\servlets\SummaryServlet.java
