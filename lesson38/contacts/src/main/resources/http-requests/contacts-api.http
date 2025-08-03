@@ -1,0 +1,27 @@
+### Получить все контакты
+GET http://localhost:8080/contacts
+
+### Добавить новый контакт
+POST http://localhost:8080/contacts
+Content-Type: application/json
+
+{
+  "firstName": "Иван",
+  "lastName": "Иванов",
+  "phone": "+7 999 123-45-67",
+  "email": "ivan@example.com"
+}
+
+### Получить контакт по ID (замените 1 на актуальный ID)
+GET http://localhost:8080/contacts/contact/1
+
+### Обновить контакт (замените 1 на актуальный ID)
+PUT http://localhost:8080/contacts/1
+Content-Type: application/json
+
+{
+  "firstName": "Иван",
+  "lastName": "Петров",
+  "phone": "+7 999 765-43-21",
+  "email": "petrov@example.com"
+}
