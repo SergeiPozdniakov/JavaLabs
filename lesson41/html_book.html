@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои любимые книги</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        form {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Мои любимые книги</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Название книги</th>
+                <th>Автор</th>
+                <th>Жанр</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1984</td>
+                <td>Джордж Оруэлл</td>
+                <td>Антиутопия</td>
+            </tr>
+            <tr>
+                <td>Мастер и Маргарита</td>
+                <td>Михаил Булгаков</td>
+                <td>Роман</td>
+            </tr>
+            <tr>
+                <td>Гарри Поттер и философский камень</td>
+                <td>Дж. К. Роулинг</td>
+                <td>Фэнтези</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <form>
+        <label for="book-title">Название книги:</label>
+        <input type="text" id="book-title" name="title" placeholder="Введите название книги">
+        
+        <label for="book-author">Автор:</label>
+        <input type="text" id="book-author" name="author" placeholder="Введите имя автора">
+        
+        <label for="book-genre">Жанр:</label>
+        <input type="text" id="book-genre" name="genre" placeholder="Введите жанр книги">
+        
+        <input type="submit" value="Добавить книгу">
+    </form>
+</body>
+</html>
