@@ -1,0 +1,334 @@
+2025-08-20 22:50:28 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 18.0.2.1 with PID 8616 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 22:50:28 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 22:50:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 22:50:29 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 49 ms. Found 1 JPA repository interface.
+2025-08-20 22:50:29 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 22:50:29 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 22:50:29 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 22:50:29 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 22:50:29 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 22:50:29 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1823 ms
+2025-08-20 22:50:30 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-20 22:51:16 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 18.0.2.1 with PID 4884 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 22:51:16 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 22:51:16 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 22:51:16 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2025-08-20 22:51:17 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 22:51:17 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 22:51:17 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 22:51:17 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 22:51:17 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 22:51:17 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1517 ms
+2025-08-20 22:51:17 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-20 22:54:00 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 18.0.2.1 with PID 10188 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 22:54:00 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 22:54:01 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 22:54:01 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 40 ms. Found 1 JPA repository interface.
+2025-08-20 22:54:02 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 22:54:02 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 22:54:02 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 22:54:02 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 22:54:02 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 22:54:02 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1526 ms
+2025-08-20 22:54:02 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-20 22:54:34 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 13240 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 22:54:34 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 22:54:35 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 22:54:35 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interface.
+2025-08-20 22:54:36 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 22:54:36 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 22:54:36 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 22:54:36 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 22:54:36 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 22:54:36 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1867 ms
+2025-08-20 22:54:36 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-20 22:54:59 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 8460 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 22:54:59 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 22:55:00 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 22:55:00 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 56 ms. Found 1 JPA repository interface.
+2025-08-20 22:55:01 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 22:55:01 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 22:55:01 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 22:55:01 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 22:55:01 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 22:55:01 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1656 ms
+2025-08-20 22:55:01 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-20 22:56:12 INFO  [Test worker] o.s.t.c.s.AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [com.example.contactData.ContactDataApplicationTests]: ContactDataApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2025-08-20 22:56:12 INFO  [Test worker] o.s.b.t.c.SpringBootTestContextBootstrapper - Found @SpringBootConfiguration com.example.contactData.ContactDataApplication for test class com.example.contactData.ContactDataApplicationTests
+2025-08-20 22:56:13 INFO  [Test worker] c.e.c.ContactDataApplicationTests - Starting ContactDataApplicationTests using Java 17.0.14 with PID 5244 (started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 22:56:13 INFO  [Test worker] c.e.c.ContactDataApplicationTests - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 22:56:14 INFO  [Test worker] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 22:56:14 INFO  [Test worker] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 53 ms. Found 1 JPA repository interface.
+2025-08-20 22:56:15 INFO  [Test worker] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 22:56:16 INFO  [Test worker] c.example.contactData.ContactService - Adding new contact: John Doe
+2025-08-20 22:56:16 INFO  [Test worker] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 22:56:16 INFO  [Test worker] c.example.contactData.ContactService - Updating email for contact with id: 1
+2025-08-20 22:56:16 INFO  [Test worker] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 22:56:16 INFO  [Test worker] c.example.contactData.ContactService - Finding contact with id: 1
+2025-08-20 22:56:16 INFO  [Test worker] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 22:56:16 INFO  [Test worker] c.example.contactData.ContactService - Updating phone for contact with id: 1
+2025-08-20 22:57:09 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 4472 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 22:57:09 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 22:57:10 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 22:57:10 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interface.
+2025-08-20 22:57:11 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 22:57:11 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 22:57:11 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 22:57:11 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 22:57:11 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 22:57:11 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1644 ms
+2025-08-20 22:57:11 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-20 22:57:15 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 12344 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 22:57:15 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 22:57:16 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 22:57:16 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interface.
+2025-08-20 22:57:17 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 22:57:17 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 22:57:17 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 22:57:17 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 22:57:17 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 22:57:17 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1625 ms
+2025-08-20 22:57:17 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-20 22:59:12 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 2612 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 22:59:12 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 22:59:13 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 22:59:13 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 51 ms. Found 1 JPA repository interface.
+2025-08-20 22:59:14 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 22:59:14 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 22:59:14 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 22:59:14 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 22:59:14 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 22:59:14 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1639 ms
+2025-08-20 22:59:14 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-20 23:00:25 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 832 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 23:00:25 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 23:00:26 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 23:00:26 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 48 ms. Found 1 JPA repository interface.
+2025-08-20 23:00:27 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 23:00:27 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:00:27 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 23:00:27 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 23:00:27 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 23:00:27 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1717 ms
+2025-08-20 23:00:27 INFO  [main] o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-08-20 23:03:04 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 13416 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 23:03:04 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 23:03:05 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 23:03:05 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 50 ms. Found 1 JPA repository interface.
+2025-08-20 23:03:06 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 23:03:06 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:03:06 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 23:03:06 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 23:03:06 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 23:03:06 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1610 ms
+2025-08-20 23:03:06 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-20 23:03:06 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-20 23:03:07 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-20 23:03:07 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-20 23:03:07 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@395a573c
+2025-08-20 23:03:07 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-20 23:03:07 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-20 23:03:08 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-20 23:03:08 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-20 23:03:08 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-20 23:03:09 INFO  [main] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 23:03:10 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:03:10 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-20 23:03:10 INFO  [main] c.e.c.ContactDataApplication - Started ContactDataApplication in 6.024 seconds (process running for 6.571)
+2025-08-20 23:09:11 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 2384 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 23:09:11 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 23:09:12 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 23:09:12 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 30 ms. Found 1 JPA repository interface.
+2025-08-20 23:09:12 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 23:09:12 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:09:12 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 23:09:12 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 23:09:12 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 23:09:12 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1046 ms
+2025-08-20 23:09:12 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-20 23:09:12 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-20 23:09:13 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-20 23:09:13 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-20 23:09:13 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:contactdb user=SA
+2025-08-20 23:09:13 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-20 23:09:13 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-20 23:09:14 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-20 23:09:14 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-20 23:09:14 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-20 23:09:14 INFO  [main] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 23:09:15 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:contactdb'
+2025-08-20 23:09:15 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:09:15 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-20 23:09:15 INFO  [main] c.e.c.ContactDataApplication - Started ContactDataApplication in 3.772 seconds (process running for 4.226)
+2025-08-20 23:10:33 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 10936 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 23:10:33 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 23:10:34 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 23:10:34 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 44 ms. Found 1 JPA repository interface.
+2025-08-20 23:10:35 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 23:10:35 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:10:35 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 23:10:35 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 23:10:35 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 23:10:35 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1627 ms
+2025-08-20 23:10:35 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-20 23:10:35 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-20 23:10:36 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-20 23:10:36 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-20 23:10:36 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:contactdb user=SA
+2025-08-20 23:10:36 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-20 23:10:36 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-20 23:10:37 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-20 23:10:37 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-20 23:10:37 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-20 23:10:38 INFO  [main] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 23:10:39 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:contactdb'
+2025-08-20 23:10:39 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:10:39 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-20 23:10:39 INFO  [main] c.e.c.ContactDataApplication - Started ContactDataApplication in 5.99 seconds (process running for 6.528)
+2025-08-20 23:13:47 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 6840 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 23:13:47 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 23:13:48 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 23:13:48 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 39 ms. Found 1 JPA repository interface.
+2025-08-20 23:13:49 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 23:13:49 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:13:49 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 23:13:49 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 23:13:49 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 23:13:49 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1641 ms
+2025-08-20 23:13:49 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-20 23:13:50 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-20 23:13:50 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-20 23:13:50 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-20 23:13:50 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:contactdb user=POSTGRES
+2025-08-20 23:13:50 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-20 23:13:50 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-20 23:13:51 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-20 23:13:51 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-20 23:13:52 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-20 23:13:52 INFO  [main] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 23:13:53 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:contactdb'
+2025-08-20 23:13:53 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:13:53 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-20 23:13:53 INFO  [main] c.e.c.ContactDataApplication - Started ContactDataApplication in 6.162 seconds (process running for 6.731)
+2025-08-20 23:14:31 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 10164 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 23:14:31 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 23:14:32 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 23:14:32 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interface.
+2025-08-20 23:14:33 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 23:14:33 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:14:33 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 23:14:33 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 23:14:33 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 23:14:33 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1672 ms
+2025-08-20 23:14:33 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-20 23:14:33 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-20 23:14:34 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-20 23:14:34 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-20 23:14:34 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:contactdb user=SA
+2025-08-20 23:14:34 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-20 23:14:34 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 2.3.232
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-20 23:14:35 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-20 23:14:35 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-20 23:14:36 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-20 23:14:36 INFO  [main] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 23:14:37 INFO  [main] o.s.b.a.h.H2ConsoleAutoConfiguration - H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:contactdb'
+2025-08-20 23:14:37 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:14:37 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-20 23:14:37 INFO  [main] c.e.c.ContactDataApplication - Started ContactDataApplication in 6.224 seconds (process running for 6.8)
+2025-08-20 23:18:42 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 4864 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 23:18:42 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 23:18:43 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 23:18:43 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 47 ms. Found 1 JPA repository interface.
+2025-08-20 23:18:44 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 23:18:44 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:18:44 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 23:18:44 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 23:18:44 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 23:18:44 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1609 ms
+2025-08-20 23:18:44 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-20 23:18:44 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-20 23:18:45 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-20 23:18:45 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-20 23:18:45 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@7dd91ffc
+2025-08-20 23:18:45 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-20 23:18:45 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-20 23:18:46 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-20 23:18:46 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-20 23:18:46 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-20 23:18:47 INFO  [main] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 23:18:48 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:18:48 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-20 23:18:48 INFO  [main] c.e.c.ContactDataApplication - Started ContactDataApplication in 5.776 seconds (process running for 6.356)
+2025-08-20 23:23:46 INFO  [main] c.e.c.ContactDataApplication - Starting ContactDataApplication using Java 17.0.14 with PID 5324 (C:\Users\sergei\Desktop\contactData\build\classes\java\main started by sergei in C:\Users\sergei\Desktop\contactData)
+2025-08-20 23:23:46 INFO  [main] c.e.c.ContactDataApplication - No active profile set, falling back to 1 default profile: "default"
+2025-08-20 23:23:47 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-08-20 23:23:47 INFO  [main] o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 42 ms. Found 1 JPA repository interface.
+2025-08-20 23:23:48 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8080 (http)
+2025-08-20 23:23:48 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:23:48 INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-08-20 23:23:48 INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.43]
+2025-08-20 23:23:48 INFO  [main] o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-08-20 23:23:48 INFO  [main] o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1745 ms
+2025-08-20 23:23:49 INFO  [main] org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.22.Final
+2025-08-20 23:23:49 INFO  [main] o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-08-20 23:23:49 INFO  [main] o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-08-20 23:23:49 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-08-20 23:23:49 INFO  [main] com.zaxxer.hikari.pool.HikariPool - HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@18dd7767
+2025-08-20 23:23:49 INFO  [main] com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2025-08-20 23:23:50 INFO  [main] o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 17.2
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-08-20 23:23:50 INFO  [main] o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-08-20 23:23:51 INFO  [main] o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-08-20 23:23:51 INFO  [main] o.s.d.j.r.query.QueryEnhancerFactory - Hibernate is in classpath; If applicable, HQL parser will be used.
+2025-08-20 23:23:51 INFO  [main] c.example.contactData.ContactService - ContactService initialized
+2025-08-20 23:23:52 INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2025-08-20 23:23:52 INFO  [main] o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8080 (http) with context path '/'
+2025-08-20 23:23:52 INFO  [main] c.e.c.ContactDataApplication - Started ContactDataApplication in 6.348 seconds (process running for 6.964)
