@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Snap Chart Editor</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/editor.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jointjs/3.6.2/joint.min.css">
+</head>
+<body>
+<div class="container-fluid p-0">
+  <!-- Верхняя панель -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="/">Snap Chart</a>
+      <div class="d-flex">
+        <input type="text" id="chart-title" class="form-control me-2" placeholder="Chart title">
+        <button id="save-btn" class="btn btn-primary">Save</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="row m-0">
+    <!-- Палитра фигур -->
+    <div class="col-md-2 bg-light p-3 border-end" id="palette">
+      <h5 class="mb-3">Shapes</h5>
+      <div class="d-grid gap-2">
+        <div class="palette-item" data-type="rectangle" draggable="true">
+          <svg width="100%" height="50" viewBox="0 0 100 50">
+            <rect x="10" y="10" width="80" height="30" fill="#4e79a7" stroke="#333" />
+            <text x="50" y="30" text-anchor="middle" fill="white" font-size="12">Rectangle</text>
+          </svg>
+        </div>
+        <div class="palette-item" data-type="circle" draggable="true">
+          <svg width="100%" height="50" viewBox="0 0 100 50">
+            <circle cx="50" cy="25" r="15" fill="#f28e2b" stroke="#333" />
+            <text x="50" y="29" text-anchor="middle" fill="white" font-size="12">Circle</text>
+          </svg>
+        </div>
+        <div class="palette-item" data-type="ellipse" draggable="true">
+          <svg width="100%" height="50" viewBox="0 0 100 50">
+            <ellipse cx="50" cy="25" rx="25" ry="15" fill="#e15759" stroke="#333" />
+            <text x="50" y="29" text-anchor="middle" fill="white" font-size="12">Ellipse</text>
+          </svg>
+        </div>
+        <div class="palette-item" data-type="rhombus" draggable="true">
+          <svg width="100%" height="50" viewBox="0 0 100 50">
+            <polygon points="50,10 90,25 50,40 10,25" fill="#76b7b2" stroke="#333" />
+            <text x="50" y="29" text-anchor="middle" fill="white" font-size="12">Rhombus</text>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <!-- Рабочая область -->
+    <div class="col-md-10 p-3" id="workspace">
+      <div class="paper-container">
+        <div id="paper"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- JointJS и зависимости -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.4.0/backbone-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jointjs/3.6.2/joint.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="/js/editor.js"></script>
+</body>
+</html>
