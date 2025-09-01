@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Случайные изображения</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        
+        /* Улучшенный заголовок с декоративной полосой слева */
+        h1 {
+            font-size: 2.5rem; /* Увеличенный размер шрифта */
+            color: #2c3e50; /* Темно-синий цвет */
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3498db; /* Нижняя граница */
+            position: relative;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100px;
+            height: 3px;
+            background-color: #e74c3c; /* Декоративная полоса */
+        }
+        
+        #image-container {
+            margin: 30px 0;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        
+        /* Улучшенная стилизация изображений */
+        img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15); /* Усиленная тень */
+            transition: all 0.3s ease; /* Плавные переходы */
+            border: 3px solid #ecf0f1;
+        }
+        
+        img:hover {
+            transform: scale(1.02); /* Легкое увеличение при наведении */
+            box-shadow: 0 12px 20px rgba(0,0,0,0.2); /* Усиленная тень при наведении */
+            border-color: #3498db; /* Изменение цвета рамки при наведении */
+        }
+        
+        /* Улучшенная стилизация кнопки */
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 14px 28px;
+            font-size: 17px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3); /* Тень кнопки */
+        }
+        
+        button:hover {
+            background-color: #2980b9; /* Более темный синий при наведении */
+            transform: translateY(-2px); /* Легкий подъем кнопки */
+            box-shadow: 0 6px 10px rgba(52, 152, 219, 0.4); /* Усиленная тень при наведении */
+        }
+        
+        button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+        }
+        
+        /* Улучшенная подпись автора */
+        footer {
+            margin-top: 50px;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 1.1rem;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            display: inline-block;
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            border-top: 2px solid #3498db;
+        }
+        
+        footer::before {
+            content: "© ";
+            color: #3498db;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Случайные изображения</h1>
+    
+    <div id="image-container">
+        <img id="random-image" src="https://dummyimage.com/600x400/3498db/ffffff&text=Изображение" alt="Случайное изображение">
+    </div>
+    
+    <button id="new-image-btn">Показать новое изображение</button>
+    
+    <footer>
+        Автор: Ваше имя
+    </footer>
+
+    <script>
+        const image = document.getElementById('random-image');
+        const button = document.getElementById('new-image-btn');
+        let counter = 1;
+
+        button.addEventListener('click', function() {
+            // Меняем изображение с новым текстом для гарантированного обновления
+            image.src = `https://dummyimage.com/600x400/3498db/ffffff&text=Изображение+${counter}`;
+            counter++;
+            
+            if (counter > 100) {
+                counter = 1;
+            }
+        });
+    </script>
+</body>
+</html>
