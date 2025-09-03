@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Случайные изображения</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+
+      /* Улучшенный заголовок с декоративной полосой слева */
+      h1 {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #3498db;
+        position: relative;
+      }
+
+      h1::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100px;
+        height: 3px;
+        background-color: #e74c3c;
+      }
+
+      #image-container {
+        margin: 30px 0;
+        min-height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 20px;
+        transition: all 0.3s ease;
+      }
+
+      /* Улучшенная стилизация изображений */
+      img {
+        max-width: 100%;
+        max-height: 500px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        border: 3px solid #ecf0f1;
+        flex: 1 1 calc(33.333% - 13.33px); /* Три колонки с отступами */
+      }
+
+      img:hover {
+        transform: scale(1.02);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        border-color: #3498db;
+      }
+
+      /* Улучшенная стилизация кнопки */
+      .btn {
+        display: inline-block;
+        background-color: #3498db;
+        color: white;
+        text-decoration: none;
+        border: none;
+        padding: 14px 28px;
+        font-size: 17px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+        width: auto;
+        margin: 0 auto;
+        display: table;
+      }
+
+      .btn:hover {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(52, 152, 219, 0.4);
+        transition: background-color 0.3s ease;
+      }
+
+      .btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+      }
+
+      /* Улучшенная подпись автора */
+      footer {
+        margin-top: 50px;
+        padding: 15px;
+        color: #7f8c8d;
+        font-size: 1.1rem;
+        background-color: #ecf0f1;
+        border-radius: 8px;
+        display: inline-block;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: 2px solid #3498db;
+      }
+
+      footer::before {
+        content: "© ";
+        color: #3498db;
+        font-weight: bold;
+      }
+
+      /* Адаптивность для маленьких экранов */
+      @media (max-width: 360px) {
+        #image-container {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        img {
+          width: 100% !important;
+          max-width: 100% !important;
+          flex: 1 1 100% !important;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Случайные изображения</h1>
+
+    <div id="image-container">
+      <img
+        src="https://dummyimage.com/600x400/3498db/ffffff&text=  Изображение"
+        alt="Случайное изображение"
+      />
+    </div>
+
+    <a href="#" id="new-image-btn" class="btn">Показать новое изображение</a>
+
+    <footer>Автор: Ваше имя</footer>
+
+    <script>
+      const imageContainer = document.getElementById("image-container");
+      const button = document.getElementById("new-image-btn");
+      let counter = 1;
+
+      button.addEventListener("click", function (e) {
+        e.preventDefault();
+
+        // Создаем новое изображение
+        const newImage = document.createElement("img");
+        newImage.src = `https://dummyimage.com/600x400/3498db/ffffff&text=Изображение+${counter}`;
+        newImage.alt = "Случайное изображение";
+
+        // Добавляем обработчик hover для анимации
+        newImage.addEventListener("mouseenter", () => {
+          newImage.style.transform = "scale(1.02)";
+          newImage.style.boxShadow = "0 12px 20px rgba(0, 0, 0, 0.2)";
+          newImage.style.borderColor = "#3498db";
+        });
+
+        newImage.addEventListener("mouseleave", () => {
+          newImage.style.transform = "";
+          newImage.style.boxShadow = "0 8px 16px rgba(0, 0, 0, 0.15)";
+          newImage.style.borderColor = "#ecf0f1";
+        });
+
+        // Добавляем изображение в контейнер
+        imageContainer.appendChild(newImage);
+        counter++;
+
+        if (counter > 100) {
+          counter = 1;
+        }
+      });
+    </script>
+  </body>
+</html>
