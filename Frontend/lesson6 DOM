@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Случайные изображения</title>
+    <style>
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: center;
+        background-color: #f8f9fa;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        color: #2c3e50;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid #3498db;
+        position: relative;
+      }
+
+      h1::after {
+        content: "";
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        width: 100px;
+        height: 3px;
+        background-color: #e74c3c;
+      }
+
+      #image-container {
+        margin: 30px 0;
+        min-height: 300px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        transition: all 0.3s ease;
+      }
+
+      img {
+        max-width: 200px;
+        max-height: 150px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+        transition: all 0.3s ease;
+        border: 3px solid #ecf0f1;
+      }
+
+      img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+        border-color: #3498db;
+      }
+
+      .button-group {
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        margin: 20px 0;
+      }
+
+      button {
+        background-color: #3498db;
+        color: white;
+        border: none;
+        padding: 14px 20px;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        box-shadow: 0 4px 6px rgba(52, 152, 219, 0.3);
+        flex: 1;
+        min-width: 180px;
+      }
+
+      button:hover:not(:disabled) {
+        background-color: #2980b9;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 10px rgba(52, 152, 219, 0.4);
+      }
+
+      button:active:not(:disabled) {
+        transform: translateY(0);
+        box-shadow: 0 2px 4px rgba(52, 152, 219, 0.3);
+      }
+
+      button:disabled {
+        background-color: #bdc3c7;
+        cursor: not-allowed;
+        transform: none;
+        box-shadow: none;
+      }
+
+      footer {
+        margin-top: 50px;
+        padding: 15px;
+        color: #7f8c8d;
+        font-size: 1.1rem;
+        background-color: #ecf0f1;
+        border-radius: 8px;
+        display: inline-block;
+        width: auto;
+        margin-left: auto;
+        margin-right: auto;
+        border-top: 2px solid #3498db;
+      }
+
+      footer::before {
+        content: "© ";
+        color: #3498db;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Случайные изображения</h1>
+
+    <div id="image-container">
+      <img
+        src="https://dummyimage.com/200x150/3498db/ffffff&text=Изображение+1"
+        alt="Случайное изображение"
+      />
+    </div>
+
+    <div class="button-group">
+      <button id="new-image-btn">Обновить изображения</button>
+      <button id="add-image-btn">Добавить картинку</button>
+      <button id="remove-image-btn" disabled>Удалить картинку</button>
+    </div>
+
+    <footer>Автор: Ваше имя</footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const imageContainer = document.getElementById("image-container");
+        const newImageBtn = document.getElementById("new-image-btn");
+        const addImageBtn = document.getElementById("add-image-btn");
+        const removeImageBtn = document.getElementById("remove-image-btn");
+
+        let imageCounter = 1;
+
+        // Функция для генерации URL случайного изображения
+        const getRandomImageUrl = () => {
+          return `https://dummyimage.com/200x150/3498db/ffffff&text=Изображение+${++imageCounter}`;
+        };
+
+        // Обновить все изображения
+        newImageBtn.addEventListener("click", () => {
+          const images = imageContainer.querySelectorAll("img");
+          images.forEach((img) => {
+            img.src = getRandomImageUrl();
+          });
+        });
+
+        // Добавить новое изображение
+        addImageBtn.addEventListener("click", () => {
+          const newImg = document.createElement("img");
+          newImg.src = getRandomImageUrl();
+          newImg.alt = "Случайное изображение";
+          imageContainer.appendChild(newImg);
+
+          // Активируем кнопку удаления
+          removeImageBtn.disabled = false;
+        });
+
+        // Удалить последнее изображение
+        removeImageBtn.addEventListener("click", () => {
+          const images = imageContainer.querySelectorAll("img");
+          if (images.length > 1) {
+            imageContainer.removeChild(images[images.length - 1]);
+
+            // Проверяем, осталось ли только одно изображение
+            if (imageContainer.querySelectorAll("img").length === 1) {
+              removeImageBtn.disabled = true;
+            }
+          }
+        });
+
+        // Инициализация состояния кнопки удаления
+        if (imageContainer.querySelectorAll("img").length <= 1) {
+          removeImageBtn.disabled = true;
+        }
+      });
+    </script>
+  </body>
+</html>
+
