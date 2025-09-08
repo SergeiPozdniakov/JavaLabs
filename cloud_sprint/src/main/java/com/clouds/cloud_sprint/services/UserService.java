@@ -25,6 +25,11 @@ public class UserService {
     @Value("${app.storage.base-path:${user.home}/cloud_storage}")
     private String storageBasePath;
 
+
+    public void setStorageBasePath(String storageBasePath) {
+        this.storageBasePath = storageBasePath;
+    }
+
     public Users createUser(Users users) {
         users.setPassword(passwordEncoder.encode(users.getPassword()));
 
