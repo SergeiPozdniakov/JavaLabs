@@ -8,26 +8,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.method.annotation.SseEmitter;
 
+
 @RestController
 @RequestMapping("/progress")
 public class ProgressController {
     @Autowired
     private FileUploadProgressListener progressListener;
-
-    @GetMapping(value = "/upload", produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+    @GetMapping(value = "/upload", produces =
+            MediaType.TEXT_EVENT_STREAM_VALUE)
     public SseEmitter trackUploadProgress() {
         SseEmitter emitter = new SseEmitter();
         new Thread(() -> {
             try {
-                while (progressListener.getPercentComplete() < 100) {
-                    emitter.send(SseEmitter.event()
-                            .data(progressListener.getPercentComplete())
-                            .name("progress"));
-                    Thread.sleep(1000);
+                int lastPercent = -1;
+                while (true) {
+                    int percent = progressListener.getPercentComplete();
+                    if (percent != lastPercent) {
+                        String eventName = (percent >= 100) ? "complete" : "progress";
+                        emitter.send(SseEmitter.event().data(percent).name(eventName));
+                        lastPercent = percent;
+                    }
+                    if (percent >= 100) {
+                        break;
+                    }
+                    Thread.sleep(100);
                 }
-                emitter.send(SseEmitter.event()
-                        .data(100)
-                        .name("complete"));
+                progressListener.reset();
                 emitter.complete();
             } catch (Exception e) {
                 emitter.completeWithError(e);
@@ -35,5 +41,4 @@ public class ProgressController {
         }).start();
         return emitter;
     }
-
 }
