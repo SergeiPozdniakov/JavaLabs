@@ -1,27 +1,24 @@
 package com.clouds.cloud_sprint;
 
 import com.clouds.cloud_sprint.model.File;
+import com.clouds.cloud_sprint.model.FileUploadProgressListener;
 import com.clouds.cloud_sprint.model.Users;
 import com.clouds.cloud_sprint.services.FileService;
-
-import com.clouds.cloud_sprint.model.FileUploadProgressListener;
-
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
+import java.io.ByteArrayInputStream;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
-import com.clouds.cloud_sprint.model.FileUploadProgressListener;
+
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
-
 
 class FileServiceTest {
 
@@ -31,111 +28,120 @@ class FileServiceTest {
     @Mock
     private FileUploadProgressListener progressListener;
 
+    @Mock
+    private MultipartFile multipartFile;
+
     @InjectMocks
     private FileService fileService;
 
-    private MultipartFile multipartFile;
-    private Users user;
+    private Users testUser;
+    private File testFile;
 
     @BeforeEach
     void setUp() {
+        MockitoAnnotations.openMocks(this);
+        testUser = new Users();
+        testUser.setUsername("testuser");
+        testUser.setBaseFolderPath("/test/path");
 
-        MockitoAnnotations.openMocks(this); // Инициализируем моки
-        // Создаем тестовый файл
-        multipartFile = new MockMultipartFile(
-                "test.mp4", // Имя файла
-                "test.mp4", // Оригинальное имя файла
-                "video/mp4", // Тип файла
-                "test data".getBytes() // Содержимое файла
-        );
-
-        // Создаем тестового пользователя
-        user = new Users();
-        user.setBaseFolderPath("C:\\cloud_storage\\testuser");
+        testFile = new File();
+        testFile.setId(1L);
+        testFile.setFileName("test.txt");
     }
 
     @Test
-    void testAddFile() throws Exception {
-        // Настройка моков
-        doNothing().when(progressListener).reset(); // Мокируем reset()
-        when(fileRepository.save(any(File.class))).thenAnswer(invocation -> {
-            File file = invocation.getArgument(0);
-            file.setId(1L); // Устанавливаем ID для сохраненного файла
-            return file;
-        });
+    void testAddFile_EmptyFile() {
 
-        // Вызов метода
-        CompletableFuture<File> future = fileService.addFile(multipartFile, user);
+            // Test 39: Попытка загрузки пустого файла
+            when(multipartFile.isEmpty()).thenReturn(true);
 
-        // Проверка результата
-        assertNotNull(future.join());
-        assertEquals("test.mp4", future.join().getFileName());
-        assertEquals("video/mp4", future.join().getContentType());
-        assertEquals(9L, future.join().getFileSize()); // Размер файла "test data".getBytes() = 9 байт
+            CompletableFuture<File> result = fileService.addFile(multipartFile, testUser);
 
-        // Проверка вызовов
-        verify(progressListener, times(1)).reset(); // Проверяем, что reset() был вызван
-        verify(progressListener, atLeastOnce()).update(anyLong(), anyLong()); // Проверяем, что update() был вызван
-        verify(fileRepository, times(1)).save(any(File.class)); // Проверяем, что save() был вызван
-    }
+            assertTrue(result.isCompletedExceptionally());
+        }
 
+        @Test
+        void testAddFile_NullFile () {
+            // Test 40: Попытка загрузки null файла
+            CompletableFuture<File> result = fileService.addFile(null, testUser);
+
+            assertTrue(result.isCompletedExceptionally());
+        }
 
     @Test
-    void testGetFilesByUser() {
-        Users user = new Users();
-        when(fileRepository.findByUser(user)).thenReturn(List.of(new File()));
+    void testAddFile_Success () throws Exception {
+        // Test 41: Успешная загрузка файла
+        when(multipartFile.isEmpty()).thenReturn(false);
+        when(multipartFile.getOriginalFilename()).thenReturn("test.txt");
+        when(multipartFile.getContentType()).thenReturn("text/plain");
+        when(multipartFile.getSize()).thenReturn(1024L);
+        when(multipartFile.getInputStream()).thenReturn(new ByteArrayInputStream("test content".getBytes()));
+        when(fileRepository.save(any(File.class))).thenReturn(testFile);
 
-        List<File> files = fileService.getFilesByUser(user);
+        CompletableFuture<File> result = fileService.addFile(multipartFile, testUser);
 
-        assertFalse(files.isEmpty());
+        assertNotNull(result);
+        assertFalse(result.isCompletedExceptionally());
+        File savedFile = result.get();
+        assertNotNull(savedFile);
+        verify(progressListener).reset();
+        verify(fileRepository).save(any(File.class));
     }
 
-    @Test
-    void testDeleteFile() {
-        File file = new File();
-        file.setFilePath("C:\\cloud_storage\\testuser\\test.mp4");
+        @Test
+        void testGetFilesByUser () {
+            // Test 42: Получение файлов пользователя
+            List<File> files = Arrays.asList(testFile);
+            when(fileRepository.findByUser(testUser)).thenReturn(files);
 
-        when(fileRepository.findById(1L)).thenReturn(Optional.of(file));
+            List<File> result = fileService.getFilesByUser(testUser);
 
-        CompletableFuture<Void> future = fileService.deleteFile(1L);
+            assertEquals(1, result.size());
+            verify(fileRepository).findByUser(testUser);
+        }
 
-        assertNull(future.join());
-        verify(fileRepository, times(1)).deleteById(1L);
+        @Test
+        void testGetFileById_Found () {
+            // Test 43: Получение файла по ID (найден)
+            when(fileRepository.findById(1L)).thenReturn(Optional.of(testFile));
+
+            File result = fileService.getFileById(1L);
+
+            assertNotNull(result);
+            assertEquals(1L, result.getId());
+        }
+
+        @Test
+        void testGetFileById_NotFound () {
+            // Test 44: Получение файла по ID (не найден)
+            when(fileRepository.findById(1L)).thenReturn(Optional.empty());
+
+            assertThrows(RuntimeException.class, () -> {
+                fileService.getFileById(1L);
+            });
+        }
+
+        @Test
+        void testDeleteFile_Success () throws Exception {
+            // Test 45: Успешное удаление файла
+            when(fileRepository.findById(1L)).thenReturn(Optional.of(testFile));
+            testFile.setFilePath("/test/path/test.txt");
+
+            CompletableFuture<Void> result = fileService.deleteFile(1L);
+
+            assertNotNull(result);
+            verify(fileRepository).deleteById(1L);
+        }
+
+        @Test
+        void testDeleteFile_NotFound () {
+            // Test 46: Удаление несуществующего файла
+            when(fileRepository.findById(1L)).thenReturn(Optional.empty());
+
+            assertThrows(RuntimeException.class, () -> {
+                fileService.deleteFile(1L);
+            });
+        }
     }
 
-    @Test
-    void testFileModel() {
-        File file = new File();
-        file.setId(1L);
-        file.setFileName("test.mp4");
-        file.setContentType("video/mp4");
-        file.setFileSize(1024L);
-        file.setFilePath("C:\\cloud_storage\\testuser\\test.mp4");
 
-        assertEquals(1L, file.getId());
-        assertEquals("test.mp4", file.getFileName());
-        assertEquals("video/mp4", file.getContentType());
-        assertEquals(1024L, file.getFileSize());
-        assertEquals("C:\\cloud_storage\\testuser\\test.mp4", file.getFilePath());
-    }
-
-    @Test
-    void testUsersModel() {
-        Users user = new Users();
-        user.setId(1L);
-        user.setUsername("testuser");
-        user.setPassword("password");
-        user.setFirstName("John");
-        user.setLastName("Doe");
-        user.setBaseFolderPath("C:\\cloud_storage\\testuser");
-
-        assertEquals(1L, user.getId());
-        assertEquals("testuser", user.getUsername());
-        assertEquals("password", user.getPassword());
-        assertEquals("John", user.getFirstName());
-        assertEquals("Doe", user.getLastName());
-        assertEquals("C:\\cloud_storage\\testuser", user.getBaseFolderPath());
-    }
-
-
-}

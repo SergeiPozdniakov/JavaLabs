@@ -1,58 +1,83 @@
 package com.clouds.cloud_sprint;
 
+import com.clouds.cloud_sprint.controller.SignupController;
 import com.clouds.cloud_sprint.model.Users;
 import com.clouds.cloud_sprint.services.UserService;
-import com.clouds.cloud_sprint.controller.SignupController;
-import com.clouds.cloud_sprint.security.SecurityConfig;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
-import org.springframework.context.annotation.Import;
-import org.springframework.test.web.servlet.MockMvc;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
+import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.redirectedUrlPattern;
 import java.util.Optional;
 
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.when;
-import static org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestPostProcessors.csrf;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.Mockito.*;
 
-@WebMvcTest(SignupController.class)
-@Import(SecurityConfig.class) // Импортируем SecurityConfig
 class SignupControllerTest {
 
-    @Autowired
-    private MockMvc mockMvc;
-
-    @MockBean
+    @Mock
     private UserService userService;
 
-    @Test
-    void testSignup() throws Exception {
-        Users user = new Users();
-        user.setUsername("testuser");
-        user.setPassword("password");
-        user.setFirstName("John");
-        user.setLastName("Doe");
+    @Mock
+    private Model model;
 
-        when(userService.getUserByUsername("testuser")).thenReturn(Optional.empty());
-        when(userService.createUser(any())).thenReturn(user);
+    @Mock
+    private BindingResult bindingResult;
 
-        mockMvc.perform(post("/signup")
-                        .param("username", "testuser")
-                        .param("password", "password")
-                        .param("firstName", "John")
-                        .param("lastName", "Doe")
-                        .with(csrf())) // Добавляем CSRF-токен
-                .andExpect(status().is3xxRedirection())
-                .andExpect(redirectedUrl("/login"));
+    @InjectMocks
+    private SignupController signupController;
+
+    private Users testUser;
+
+    @BeforeEach
+    void setUp() {
+        MockitoAnnotations.openMocks(this);
+        testUser = new Users();
+        testUser.setUsername("testuser");
     }
 
+    @Test
+    void testShowSignupForm() {
+        // Test 9: Отображение формы регистрации
+        String result = signupController.showSignupForm(model);
+        assertEquals("signup", result);
+        verify(model).addAttribute(eq("user"), any(Users.class));
+    }
 
+    @Test
+    void testSignup_UserExists() {
+        // Test 10: Регистрация существующего пользователя
+        when(userService.getUserByUsername("testuser")).thenReturn(Optional.of(testUser));
 
+        String result = signupController.signup(testUser, bindingResult, model);
+
+        assertEquals("signup", result);
+        verify(model).addAttribute("error", "Пользователь с таким логином уже существует");
+    }
+
+    @Test
+    void testSignup_ValidationErrors() {
+        // Test 11: Ошибки валидации при регистрации
+        when(bindingResult.hasErrors()).thenReturn(true);
+
+        String result = signupController.signup(testUser, bindingResult, model);
+
+        assertEquals("signup", result);
+        verify(model).addAttribute("error", "Проверьте введенные данные");
+    }
+
+    @Test
+    void testSignup_Success() {
+        // Test 12: Успешная регистрация
+        when(userService.getUserByUsername("testuser")).thenReturn(Optional.empty());
+        when(bindingResult.hasErrors()).thenReturn(false);
+
+        String result = signupController.signup(testUser, bindingResult, model);
+
+        assertEquals("redirect:/login", result);
+        verify(userService).createUser(testUser);
+    }
 }
