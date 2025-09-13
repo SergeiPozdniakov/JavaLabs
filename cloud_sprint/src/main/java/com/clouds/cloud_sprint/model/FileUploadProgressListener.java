@@ -12,6 +12,19 @@ public class FileUploadProgressListener {
     public void update(long bytesRead, long contentLength) {
         this.bytesRead = bytesRead;
         this.contentLength = contentLength;
+
+        // Защита от деления на ноль и отрицательных значений
+        if (contentLength <= 0 || bytesRead < 0) {
+            this.percentComplete = 0;
+            return;
+        }
+
+        // Защита от переполнения (bytesRead > contentLength)
+        if (bytesRead > contentLength) {
+            this.percentComplete = 100;
+            return;
+        }
+
         this.percentComplete = (int) ((bytesRead * 100) / contentLength);
     }
 
@@ -23,9 +36,15 @@ public class FileUploadProgressListener {
         return bytesRead;
     }
 
+    public long getContentLength() {  return contentLength;  }
+
     public void reset() {
         this.bytesRead = 0;
         this.contentLength = 0;
         this.percentComplete = 0;
+    }
+
+    public boolean isComplete() {
+        return percentComplete >= 100;
     }
 }
