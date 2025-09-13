@@ -1,6 +1,7 @@
 package com.clouds.cloud_sprint.model;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -23,9 +24,11 @@ public class Users implements UserDetails {
     private String password;
 
     @Column(nullable = false)
+    @NotBlank(message = "Имя не может быть пустым")
     private String firstName;
 
     @Column(nullable = false)
+    @NotBlank(message = "Фамилия не может быть пустым")
     private String lastName;
 
     @Column(nullable = false)

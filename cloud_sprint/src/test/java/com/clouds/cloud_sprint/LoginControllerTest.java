@@ -2,7 +2,7 @@ package com.clouds.cloud_sprint;
 
 import com.clouds.cloud_sprint.controller.LoginController;
 import com.clouds.cloud_sprint.security.SecurityConfig;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.context.annotation.Import;
