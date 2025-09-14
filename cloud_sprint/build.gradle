@@ -46,51 +46,50 @@ tasks.named('test') {
     useJUnitPlatform()
 }
 
-//
 jacoco {
-    toolVersion = "0.8.11" //
+    toolVersion = "0.8.11"
 }
 
 test {
-    finalizedBy jacocoTestReport //
-    finalizedBy jacocoTestCoverageVerification //
+    finalizedBy jacocoTestReport
+    finalizedBy jacocoTestCoverageVerification
 }
 
-
 def jacocoExcluded = [
-    "com/clouds/cloud_sprint/model/*", //
-    "com/clouds/cloud_sprint/config/*" //
+        "com/clouds/cloud_sprint/model/*",
+        "com/clouds/cloud_sprint/config/*"
 ]
 
 jacocoTestReport {
-    dependsOn test //
-    afterEvaluate {
-        classDirectories.setFrom(files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: jacocoExcluded)
-        }))
-    }
+    dependsOn test
+
+    classDirectories.setFrom(files(classDirectories.files.collect {
+        fileTree(dir: it, excludes: jacocoExcluded)
+    }))
+
     reports {
-        xml.required = true //
+        xml.required = true
         csv.required = false
         html.required = true
     }
 }
 
 jacocoTestCoverageVerification {
-    dependsOn test //
-    afterEvaluate {
-        classDirectories.setFrom(files(classDirectories.files.collect {
-            fileTree(dir: it, exclude: jacocoExcluded)
-        }))
-    }
+    dependsOn test
+
+    classDirectories.setFrom(files(classDirectories.files.collect {
+        fileTree(dir: it, excludes: jacocoExcluded)
+    }))
+
     violationRules {
         rule {
             element = 'BUNDLE'
             limit {
                 counter = 'INSTRUCTION'
                 value = 'COVEREDRATIO'
-                minimum = 0.7 // (70%)
+                minimum = 0.8
             }
         }
     }
+
 }
