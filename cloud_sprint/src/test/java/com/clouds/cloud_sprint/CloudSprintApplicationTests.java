@@ -8,7 +8,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 public class CloudSprintApplicationTests {
 
 	@Test
-    public void contextLoads() {
+    public void contextLoadsApp() {
 	}
 
 }
