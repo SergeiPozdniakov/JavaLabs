@@ -41,7 +41,7 @@ class SignupControllerTest {
 
     @Test
     void testShowSignupForm() {
-        // Test 9: Отображение формы регистрации
+        // Отображение формы регистрации
         String result = signupController.showSignupForm(model);
         assertEquals("signup", result);
         verify(model).addAttribute(eq("user"), any(Users.class));
@@ -49,7 +49,7 @@ class SignupControllerTest {
 
     @Test
     void testSignup_UserExists() {
-        // Test 10: Регистрация существующего пользователя
+        // Регистрация существующего пользователя
         when(userService.getUserByUsername("testuser")).thenReturn(Optional.of(testUser));
 
         String result = signupController.signup(testUser, bindingResult, model);
@@ -60,7 +60,7 @@ class SignupControllerTest {
 
     @Test
     void testSignup_ValidationErrors() {
-        // Test 11: Ошибки валидации при регистрации
+        // Ошибки валидации при регистрации
         when(bindingResult.hasErrors()).thenReturn(true);
 
         String result = signupController.signup(testUser, bindingResult, model);
@@ -71,7 +71,7 @@ class SignupControllerTest {
 
     @Test
     void testSignup_Success() {
-        // Test 12: Успешная регистрация
+        // Успешная регистрация
         when(userService.getUserByUsername("testuser")).thenReturn(Optional.empty());
         when(bindingResult.hasErrors()).thenReturn(false);
 

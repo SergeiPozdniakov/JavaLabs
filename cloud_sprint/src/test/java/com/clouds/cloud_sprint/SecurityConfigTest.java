@@ -21,7 +21,7 @@ class SecurityConfigTest {
 
     @Test
     void testPasswordEncoding() {
-        // Test 36: Кодирование пароля
+        // Кодирование пароля
         PasswordEncoder encoder = securityConfig.passwordEncoder();
         String rawPassword = "password";
         String encodedPassword = encoder.encode(rawPassword);

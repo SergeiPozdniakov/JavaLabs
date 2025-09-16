@@ -10,7 +10,7 @@ class FileSizeFormatTest {
 
     @Test
     void testFileSizeFormatting_KB() {
-        // Test 72: Форматирование размера файла в КБ
+        // Форматирование размера файла в КБ
         File file = new File();
         file.setFileSize(1536L); // 1.5 KB
 
@@ -28,7 +28,7 @@ class FileSizeFormatTest {
 
     @Test
     void testFileSizeFormatting_GB() {
-        // Test 74: Форматирование размера файла в ГБ
+        // Форматирование размера файла в ГБ
         File file = new File();
         file.setFileSize(3221225472L); // 3 GB
 
@@ -37,7 +37,7 @@ class FileSizeFormatTest {
 
     @Test
     void testFileSizeBoundaryConditions() {
-        // Test 75: Граничные условия размера файла
+        // Граничные условия размера файла
         File file = new File();
 
         // Нулевой размер
@@ -48,7 +48,7 @@ class FileSizeFormatTest {
         file.setFileSize(Long.MAX_VALUE);
         assertEquals(Long.MAX_VALUE, file.getFileSize());
 
-        // Отрицательный размер (должен обрабатываться, но не рекомендуется)
+        // Отрицательный размер
         file.setFileSize(-1L);
         assertEquals(-1L, file.getFileSize());
     }

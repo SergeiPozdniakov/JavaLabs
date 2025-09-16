@@ -63,7 +63,7 @@ class FileServiceConcurrencyTest {
 
     @Test
     void testConcurrentFileDeletions() throws Exception {
-        // Test 71: Конкурентное удаление файлов
+        //  Конкурентное удаление файлов
         File file1 = new File();
         file1.setId(1L);
         file1.setFilePath(System.getProperty("java.io.tmpdir") + "/file1.txt");

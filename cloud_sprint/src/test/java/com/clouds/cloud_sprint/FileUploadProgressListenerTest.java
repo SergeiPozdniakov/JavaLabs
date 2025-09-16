@@ -14,7 +14,7 @@ class FileUploadProgressListenerTest {
         progressListener = new FileUploadProgressListener();
     }
 
-    // 1. Проверка начальных значений
+    // Проверка начальных значений
     @Test
     void testInitialState() {
         // Проверка начальных значений
@@ -24,7 +24,7 @@ class FileUploadProgressListenerTest {
                 "ожидается 0 процентов");
     }
 
-    // 2. Тест проверки чтения объекта нулевого размера
+    // Тест проверки чтения объекта нулевого размера
     @Test
     void testUpdateEmptyFile() {
         // Попытка обновить с нулевым размером файла
@@ -34,7 +34,7 @@ class FileUploadProgressListenerTest {
                 "Процент должен остаться 0 при нулевом размере файла");
     }
 
-    // 3. Тест проверки рабочего состояния
+    // Тест проверки рабочего состояния
     @Test
     void testUpdateWorkStata() {
         progressListener.update(25, 100);
@@ -45,7 +45,7 @@ class FileUploadProgressListenerTest {
                 "Должно быть 25 байт");
     }
 
-    // 4. Тест проверки больших значений
+    // Тест проверки больших значений
     @Test
     void testUpdateWithLargeValues() {
         progressListener.update(5_000_000L, 10_000_000L);
@@ -54,7 +54,7 @@ class FileUploadProgressListenerTest {
                 "должно быть 50%");
     }
 
-     // 5. Тест полного завершения загрузки.
+     // Тест полного завершения загрузки.
     @Test
     void testComplete() {
         progressListener.update(100, 100);
@@ -63,7 +63,7 @@ class FileUploadProgressListenerTest {
                 "должно быть 100%");
     }
 
-     //6. Тест защиты от переполнения.
+     // Тест защиты от переполнения.
     @Test
     void testUpdateWithOverflow() {
         progressListener.update(150, 100);
@@ -73,7 +73,7 @@ class FileUploadProgressListenerTest {
     }
 
 
-     //7. Тест множественных обновлений.
+     // Тест множественных обновлений.
     @Test
     void testMultipleUpdates() {
         // Последовательные обновления прогресса
@@ -88,7 +88,7 @@ class FileUploadProgressListenerTest {
                 "должно быть 100%");
     }
 
-     // 8. Тест сброса состояния после обновления.
+     // Тест сброса состояния после обновления.
     @Test
     void testResetAfterUpdate() {
         progressListener.update(50, 100);
@@ -103,7 +103,7 @@ class FileUploadProgressListenerTest {
                 "должно быть 0% после сброса");
     }
 
-    // 9. Тест сброса из начального состояния.
+    // Тест сброса из начального состояния.
     @Test
     void testResetFromInitialState() {
         // Сбрасываем без предварительных обновлений
@@ -115,7 +115,7 @@ class FileUploadProgressListenerTest {
                 "должно быть 0% после сброса");
     }
 
-     // 10. Тест минимального прогресса.
+     // Тест минимального прогресса.
     @Test
     void testMinimalProgress() {
         progressListener.update(1, 100);

@@ -66,7 +66,7 @@ class HomeControllerTest {
         SecurityContextHolder.setContext(securityContext);
     }
 
-    // 1. Загрузка главной страницы
+    //  Загрузка главной страницы
     @Test
     void homePage() throws Exception {
         // *условия выполнения*
@@ -80,7 +80,7 @@ class HomeControllerTest {
                 .andExpect(model().attributeExists("files")); //появление атрибута
     }
 
-    // 2. Загрузка нового непустого файла
+    //  Загрузка нового непустого файла
     @Test
     void uploadValidFile() throws Exception {
 
@@ -106,7 +106,7 @@ class HomeControllerTest {
                 .andExpect(redirectedUrl("/home"));
     }
 
-    // 3. Загрузка пустого файла
+    //  Загрузка пустого файла
     @Test
     void uploadEmptyFile() throws Exception {
         MockMultipartFile emptyFile = new MockMultipartFile(
@@ -126,7 +126,7 @@ class HomeControllerTest {
                 .andExpect(redirectedUrl("/home"));
     }
 
-    // 4. Скачивание существующего файла
+    // Скачивание существующего файла
     @Test
     void downloadFile() throws Exception {
 
@@ -157,7 +157,7 @@ class HomeControllerTest {
     }
 
 
-    // 5. Cкачивание несуществующего файла
+    // Cкачивание несуществующего файла
     @Test
     void downloadNoFile() throws Exception {
         Long fileId = 99L;
@@ -170,7 +170,7 @@ class HomeControllerTest {
                 .andExpect(content().string("File not found"));
     }
 
-    // 6. Удаления файла
+    // Удаления файла
     @Test
     void deleteFile() throws Exception {
         Long fileId = 1L;
@@ -186,7 +186,7 @@ class HomeControllerTest {
                 .andExpect(redirectedUrl("/home"));
     }
 
-    // 7. Удаления несуществующего файла
+    //  Удаления несуществующего файла
     @Test
     void DeleteNoFile() throws Exception {
         Long FileId = 99L;
@@ -204,7 +204,7 @@ class HomeControllerTest {
     }
 
 
-    // 8. список файлов
+    // список файлов
     @Test
     void fileList() throws Exception {
 
@@ -229,7 +229,7 @@ class HomeControllerTest {
                 .andExpect(model().attribute("files", files));
     }
 
-    // 9. Загрузка без CSRF
+    // Загрузка без CSRF
     @Test
     void uploadWithoutCsrf() throws Exception {
 
@@ -241,14 +241,14 @@ class HomeControllerTest {
                 .andExpect(status().isForbidden()); //403
     }
 
-    // 10. Удаление без CSRF
+    // Удаление без CSRF
     @Test
     void deleteWithoutCsrf() throws Exception {
         mockMvc.perform(post("/home/delete/1"))
                 .andExpect(status().isForbidden());  //403
     }
 
-    // 11. Доступ к домашней странице без аутентификации
+    // Доступ к домашней странице без аутентификации
     @Test
     void homePageWithoutAuthentication() throws Exception {
         // симуляция неаутентифицированного пользователя
@@ -259,7 +259,7 @@ class HomeControllerTest {
                 .andExpect(redirectedUrlPattern("**/login"));
     }
 
-    // 12. Загрузка файла с ошибкой (напр. нет места)
+    // Загрузка файла с ошибкой (напр. нет места)
     @Test
     void uploadFileWithIOException() throws Exception {
         MockMultipartFile file = new MockMultipartFile(
@@ -277,7 +277,7 @@ class HomeControllerTest {
                 .andExpect(redirectedUrl("/home"));
     }
 
-    // 13. Получение пустого списка файлов
+    // Получение пустого списка файлов
     @Test
     void emptyFileList() throws Exception {
 

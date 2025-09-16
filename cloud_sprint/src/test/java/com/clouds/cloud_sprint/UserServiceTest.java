@@ -40,7 +40,7 @@ class UserServiceTest {
 
     @Test
     void testCreateUser() {
-        // Test 47: Создание пользователя
+        // Создание пользователя
         when(passwordEncoder.encode("rawpassword")).thenReturn("encodedpassword");
         when(userRepository.save(any(Users.class))).thenReturn(testUser);
 
@@ -53,7 +53,7 @@ class UserServiceTest {
 
     @Test
     void testGetUserByUsername_Found() {
-        // Test 48: Получение пользователя по имени (найден)
+        // Получение пользователя по имени (найден)
         when(userRepository.findByUsername("testuser")).thenReturn(Optional.of(testUser));
 
         Optional<Users> result = userService.getUserByUsername("testuser");
@@ -64,7 +64,7 @@ class UserServiceTest {
 
     @Test
     void testGetUserByUsername_NotFound() {
-        // Test 49: Получение пользователя по имени (не найден)
+        // Получение пользователя по имени (не найден)
         when(userRepository.findByUsername("unknown")).thenReturn(Optional.empty());
 
         Optional<Users> result = userService.getUserByUsername("unknown");
@@ -74,7 +74,7 @@ class UserServiceTest {
 
     @Test
     void testSetStorageBasePath() {
-        // Test 50: Установка базового пути хранения
+        // Установка базового пути хранения
         String testPath = "/custom/path";
         userService.setStorageBasePath(testPath);
 

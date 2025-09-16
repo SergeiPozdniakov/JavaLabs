@@ -70,7 +70,7 @@ class FileServiceTest {
 
     @Test
     void testAddFile_Success () throws Exception {
-        // Test 41: Успешная загрузка файла
+        // Успешная загрузка файла
         when(multipartFile.isEmpty()).thenReturn(false);
         when(multipartFile.getOriginalFilename()).thenReturn("test.txt");
         when(multipartFile.getContentType()).thenReturn("text/plain");
@@ -90,7 +90,7 @@ class FileServiceTest {
 
         @Test
         void testGetFilesByUser () {
-            // Test 42: Получение файлов пользователя
+            // Получение файлов пользователя
             List<File> files = Arrays.asList(testFile);
             when(fileRepository.findByUser(testUser)).thenReturn(files);
 
@@ -102,7 +102,7 @@ class FileServiceTest {
 
         @Test
         void testGetFileById_Found () {
-            // Test 43: Получение файла по ID (найден)
+            // Получение файла по ID (найден)
             when(fileRepository.findById(1L)).thenReturn(Optional.of(testFile));
 
             File result = fileService.getFileById(1L);
@@ -113,7 +113,7 @@ class FileServiceTest {
 
         @Test
         void testGetFileById_NotFound () {
-            // Test 44: Получение файла по ID (не найден)
+            // Получение файла по ID (не найден)
             when(fileRepository.findById(1L)).thenReturn(Optional.empty());
 
             assertThrows(RuntimeException.class, () -> {
@@ -123,7 +123,7 @@ class FileServiceTest {
 
         @Test
         void testDeleteFile_Success () throws Exception {
-            // Test 45: Успешное удаление файла
+            // Успешное удаление файла
             when(fileRepository.findById(1L)).thenReturn(Optional.of(testFile));
             testFile.setFilePath("/test/path/test.txt");
 
@@ -135,7 +135,7 @@ class FileServiceTest {
 
         @Test
         void testDeleteFile_NotFound () {
-            // Test 46: Удаление несуществующего файла
+            // Удаление несуществующего файла
             when(fileRepository.findById(1L)).thenReturn(Optional.empty());
 
             assertThrows(RuntimeException.class, () -> {

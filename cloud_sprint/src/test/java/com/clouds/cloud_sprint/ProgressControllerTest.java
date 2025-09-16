@@ -22,7 +22,7 @@ class ProgressControllerTest {
     @InjectMocks
     private ProgressController progressController;
 
-    //1. проверка метода trackUploadProgress()
+    //проверка метода trackUploadProgress()
     // метод создает Server-Sent Events (SSE) соединение для отслеживания
     // прогресса загрузки файла в реальном времени
     @Test
@@ -40,7 +40,7 @@ class ProgressControllerTest {
                                           // загрузки сбрасывает полосу
     }
 
-    //2. проверка метода trackUploadProgress() на постепенное обновление прогресса
+    // проверка метода trackUploadProgress() на постепенное обновление прогресса
     @Test
     void testTrackUploadProgressMultiple() throws Exception {
         when(progressListener.getPercentComplete()).thenReturn(0, 25, 50, 75, 100);
@@ -53,7 +53,7 @@ class ProgressControllerTest {
         verify(progressListener).reset();
     }
 
-    //3. проверка метода trackUploadProgress() на остановку проверок после 100 процентов
+    // проверка метода trackUploadProgress() на остановку проверок после 100 процентов
     @Test
     void testTrackUploadProgressCompletesAt100() throws Exception {
         when(progressListener.getPercentComplete()).thenReturn(99, 100);
@@ -66,7 +66,7 @@ class ProgressControllerTest {
         verify(progressListener).reset();
     }
 
-    //4. проверка метода trackUploadProgress() при мгновенной загрузке
+    // проверка метода trackUploadProgress() при мгновенной загрузке
     @Test
     void testTrackUploadProgressFastComplite() throws Exception {
         when(progressListener.getPercentComplete()).thenReturn(100);
@@ -79,7 +79,7 @@ class ProgressControllerTest {
         verify(progressListener).reset();
     }
 
-    //5. проверка отработки исключений
+    // проверка отработки исключений
     @Test
     void testTrackUploadProgressWithException() throws Exception {
         when(progressListener.getPercentComplete()).thenThrow(new RuntimeException("Test error"));
@@ -92,7 +92,7 @@ class ProgressControllerTest {
         assertNotNull(emitter);
     }
 
-    //6. проверка корректного создания эмиттера
+    // проверка корректного создания эмиттера
     @Test
     void testTrackUploadProgressEmitterCreation() {
         SseEmitter emitter = progressController.trackUploadProgress();
