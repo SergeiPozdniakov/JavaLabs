@@ -1,1 +1,8 @@
-rootProject.name = '07-some-project'
+pluginManagement {
+    repositories {
+        gradlePluginPortal() // ОБЯЗАТЕЛЬНО! Без этого плагин allure не найдется
+        mavenCentral()
+    }
+}
+
+rootProject.name = 'cloud_sprint'

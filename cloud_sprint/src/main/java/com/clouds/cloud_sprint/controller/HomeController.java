@@ -16,11 +16,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-
 import java.io.IOException;
 import java.net.URLEncoder;
 import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
@@ -36,24 +34,29 @@ public class HomeController {
 
     @GetMapping
     public String home(@AuthenticationPrincipal Users users, Model model) {
+
         if (users == null) {
             return "redirect:/login";
         }
-        logger.info("Пользователь {} аутентифицирован, переход на home.html", users.getUsername());
+        logger.info("The user {} is authenticated, switching to home.html", users.getUsername());
 
         List<File> files = fileService.getFilesByUser(users);
         model.addAttribute("files", files);
+
         return "home"; // Должен совпадать с именем файла home.html
     }
 
     @PostMapping("/upload")
     public String uploadFile(@RequestParam("file") MultipartFile file, @AuthenticationPrincipal Users users, Model model) throws IOException {
+
         fileService.addFile(file, users);
+
         return "redirect:/home";
     }
 
     @GetMapping("/download/{id}")
     public ResponseEntity<Resource> downloadFile(@PathVariable Long id) throws IOException {
+
         // Получаем файл из базы данных
         File file = fileService.getFileById(id);
 
@@ -65,6 +68,7 @@ public class HomeController {
         if (resource.exists() || resource.isReadable()) {
             // Кодируем имя файла для корректной передачи в заголовке
             String fileName = URLEncoder.encode(file.getFileName(), StandardCharsets.UTF_8.toString()).replaceAll("\\+", "%20");
+
             return ResponseEntity.ok()
                     .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + fileName + "\"")
                     .header(HttpHeaders.CONTENT_TYPE, "application/octet-stream") // Универсальный MIME-тип
@@ -76,7 +80,9 @@ public class HomeController {
 
     @PostMapping("/delete/{id}")
     public String deleteFile(@PathVariable Long id) {
+
         fileService.deleteFile(id);
+
         return "redirect:/home";
     }
 }
