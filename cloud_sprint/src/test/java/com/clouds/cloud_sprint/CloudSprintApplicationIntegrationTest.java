@@ -115,6 +115,12 @@ public class CloudSprintApplicationIntegrationTest {
         }
     }
 
+    @Test
+    void testDatabaseConnection() {
+        assertThat(postgres.isRunning()).isTrue();
+        System.out.println("DB URL: " + postgres.getJdbcUrl());
+    }
+
     // --- Группа 1: Регистрация и Аутентификация ---
 
     @Test
