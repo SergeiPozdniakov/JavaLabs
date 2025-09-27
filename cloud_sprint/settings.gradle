@@ -1,6 +1,6 @@
 pluginManagement {
     repositories {
-        gradlePluginPortal() // ОБЯЗАТЕЛЬНО! Без этого плагин allure не найдется
+        gradlePluginPortal()
         mavenCentral()
     }
 }
