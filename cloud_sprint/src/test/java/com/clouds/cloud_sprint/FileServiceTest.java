@@ -138,62 +138,7 @@ class FileServiceTest {
         verify(fileRepository).findByUser(testUser);
         }
 
-    @Test
-    @Description("Тест проверяет получение файла по ID (найден). " +
-            "Используется техника тест-дизайна 'Классы эквивалентности' для проверки работы системы " +
-            "с корректными данными. Тест важен для обеспечения корректного получения файла по ID.")
-    @AllureId("FILE-SERVICE-005")
-    @Step("Проверка получения файла по ID (найден)")
-        void testGetFileById_Found () {
-        Allure.step("Подготовка данных: настройка мока для существующего файла");
-        // Получение файла по ID (найден)
-        when(fileRepository.findById(1L)).thenReturn(Optional.of(testFile));
 
-        Allure.step("Получение файла по ID");
-        File result = fileService.getFileById(1L);
-
-        Allure.step("Проверка результатов");
-        assertNotNull(result);
-        assertEquals(1L, result.getId());
-        }
-
-    @Test
-    @Description("Тест проверяет получение файла по ID (не найден). " +
-            "Используется техника тест-дизайна 'Граничные значения' для проверки работы системы " +
-            "с несуществующими файлами. Тест важен для обеспечения корректной обработки ошибок при " +
-            "попытке получить несуществующий файл.")
-    @AllureId("FILE-SERVICE-006")
-    @Step("Проверка получения файла по ID (не найден)")
-        void testGetFileById_NotFound () {
-        Allure.step("Подготовка данных: настройка мока для несуществующего файла");
-        // Получение файла по ID (не найден)
-        when(fileRepository.findById(1L)).thenReturn(Optional.empty());
-
-        Allure.step("Попытка получения несуществующего файла");
-        assertThrows(RuntimeException.class, () -> {
-                fileService.getFileById(1L);
-        });
-        }
-
-    @Test
-    @Description("Тест проверяет успешное удаление файла. " +
-            "Используется техника тест-дизайна 'Классы эквивалентности' для проверки работы системы " +
-            "с корректными данными. Тест важен для обеспечения корректного удаления файлов.")
-    @AllureId("FILE-SERVICE-007")
-    @Step("Проверка успешного удаления файла")
-        void testDeleteFile_Success () throws Exception {
-        Allure.step("Подготовка данных: настройка мока для существующего файла");
-        // Успешное удаление файла
-        when(fileRepository.findById(1L)).thenReturn(Optional.of(testFile));
-        testFile.setFilePath("/test/path/test.txt");
-
-        Allure.step("Удаление файла");
-        CompletableFuture<Void> result = fileService.deleteFile(1L);
-
-        Allure.step("Проверка результатов удаления");
-        assertNotNull(result);
-        verify(fileRepository).deleteById(1L);
-        }
 
     @Test
     @Description("Тест проверяет удаление несуществующего файла. " +

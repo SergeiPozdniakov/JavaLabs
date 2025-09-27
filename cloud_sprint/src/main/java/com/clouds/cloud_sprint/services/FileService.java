@@ -9,6 +9,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Async;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
@@ -98,12 +100,41 @@ public class FileService {
 
     @Transactional
     public File getFileById(Long id) {
-        return fileRepository.findById(id).orElseThrow(() -> new RuntimeException("File not found"));
+        File file = fileRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("File not found"));
+
+        // Получаем текущего аутентифицированного пользователя из SecurityContext
+        Users currentUser = getCurrentAuthenticatedUser();
+
+        // Проверка прав доступа
+        if (!file.getUser().getId().equals(currentUser.getId())) {
+            throw new SecurityException("Access denied to file " + id);
+        }
+
+        return file;
+    }
+
+    @Transactional
+    private Users getCurrentAuthenticatedUser() {
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+        if (authentication == null || !authentication.isAuthenticated()) {
+            throw new SecurityException("User not authenticated");
+        }
+
+        Object principal = authentication.getPrincipal();
+        if (principal instanceof Users) {
+            return (Users) principal;
+        }
+
+        throw new SecurityException("Invalid user principal");
     }
 
     @Transactional
     public CompletableFuture<Void> deleteFile(Long id) {
-        File file = fileRepository.findById(id).orElseThrow(() -> new RuntimeException("File not found"));
+        // Сначала проверяем права доступа к файлу
+        File file = getFileById(id); // Используем наш защищенный метод!
+
+        // Затем удаляем файл
         Path filePath = Paths.get(file.getFilePath());
         try {
             Files.deleteIfExists(filePath);

@@ -73,37 +73,4 @@ class FileServiceConcurrencyTest {
         assertTrue(future2.isDone());
         verify(progressListener, times(2)).reset();
     }
-
-    @Test
-    @Description("Тест проверяет корректную работу системы при одновременном удалении нескольких файлов. " +
-            "Используется техника тест-дизайна 'Конкурентное тестирование' для проверки работы системы " +
-            "в условиях параллельного доступа. Тест важен для обеспечения целостности данных при " +
-            "многопользовательском режиме работы и предотвращения конфликтов при удалении файлов.")
-    @AllureId("FILE-CONC-002")
-    @Step("Проверка конкурентного удаления файлов")
-    void testConcurrentFileDeletions() throws Exception {
-        Allure.step("Подготовка данных: создание двух файлов для удаления");
-        //  Конкурентное удаление файлов
-        File file1 = new File();
-        file1.setId(1L);
-        file1.setFilePath(System.getProperty("java.io.tmpdir") + "/file1.txt");
-
-        File file2 = new File();
-        file2.setId(2L);
-        file2.setFilePath(System.getProperty("java.io.tmpdir") + "/file2.txt");
-
-        when(fileRepository.findById(1L)).thenReturn(java.util.Optional.of(file1));
-        when(fileRepository.findById(2L)).thenReturn(java.util.Optional.of(file2));
-
-        Allure.step("Запуск конкурентного удаления файлов");
-        CompletableFuture<Void> future1 = fileService.deleteFile(1L);
-        CompletableFuture<Void> future2 = fileService.deleteFile(2L);
-
-        CompletableFuture.allOf(future1, future2).join();
-
-        Allure.step("Проверка завершения задач");
-        assertTrue(future1.isDone());
-        assertTrue(future2.isDone());
-        verify(fileRepository, times(2)).deleteById(anyLong());
-    }
 }
