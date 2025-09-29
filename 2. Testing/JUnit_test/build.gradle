@@ -1,0 +1,53 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.5.6'
+	id 'io.spring.dependency-management' version '1.1.7'
+	id 'org.asciidoctor.jvm.convert' version '3.3.2'
+	id 'io.qameta.allure' version '2.12.0'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+description = 'Demo project for Spring Boot'
+
+java {
+	toolchain {
+		languageVersion = JavaLanguageVersion.of(17)
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+ext {
+	set('snippetsDir', file("build/generated-snippets"))
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+	testImplementation 'io.qameta.allure:allure-junit5:2.12.0' // Адаптер для JUnit 5
+}
+
+tasks.named('test') {
+	outputs.dir snippetsDir
+	useJUnitPlatform()
+	finalizedBy allureReport // Генерация отчета Allure после тестов
+}
+
+tasks.named('asciidoctor') {
+	inputs.dir snippetsDir
+	dependsOn test
+}
+
+allure {
+	version = "2.12.0" // Версия Allure
+
+
+	useJUnit5 {
+		version = "2.12.0" // Версия адаптера для JUnit 5
+	}
+}
