@@ -11,12 +11,25 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.TestPropertySource;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.Matchers.notNullValue;
 
-// Добавляем @TestPropertySource для отключения безопасности
+/**
+ * Integration test for the REST API endpoints.
+ * This test sets up a basic data scenario and verifies the ability to create and retrieve entities via the API.
+ * Security is disabled for this test.
+ */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles({"h2", "spring-data-jpa"})
-@TestPropertySource(properties = {"petclinic.security.enable=false"})
-class PetClinicRestApiTest {
+@TestPropertySource(
+    properties = {
+        "petclinic.security.enable=false",
+        "spring.jpa.hibernate.ddl-auto=create-drop", // <-- Добавлено
+        "spring.sql.init.mode=never"                 // <-- Добавлено: не запускать schema.sql
+    }
+)
+class WetClinicRestApiTest {
+
+    private static final String BASE_API_PATH = "/petclinic/api";
 
     @LocalServerPort
     private int port;
@@ -50,15 +63,13 @@ class PetClinicRestApiTest {
             }
             """.formatted(adminUsername, adminPassword, adminRole);
 
-
         given()
             .contentType(ContentType.JSON)
             .body(userJson)
             .when()
-            .post("/petclinic/api/users") // Путь к эндпоинту создания пользователя
+            .post(BASE_API_PATH + "/users") // Используем константу
             .then()
-            .statusCode(HttpStatus.CREATED.value()); // Только проверяем статус 201
-
+            .statusCode(HttpStatus.CREATED.value());
 
         System.out.println("Создан пользователь с username: " + adminUsername);
 
@@ -76,7 +87,7 @@ class PetClinicRestApiTest {
             .contentType(ContentType.JSON)
             .body(owner1Json)
             .when()
-            .post("/petclinic/api/owners")
+            .post(BASE_API_PATH + "/owners") // Используем константу
             .then()
             .statusCode(HttpStatus.CREATED.value())
             .extract()
@@ -96,7 +107,7 @@ class PetClinicRestApiTest {
             .contentType(ContentType.JSON)
             .body(owner2Json)
             .when()
-            .post("/petclinic/api/owners")
+            .post(BASE_API_PATH + "/owners") // Используем константу
             .then()
             .statusCode(HttpStatus.CREATED.value())
             .extract()
@@ -115,7 +126,7 @@ class PetClinicRestApiTest {
             .contentType(ContentType.JSON)
             .body(petType1Json)
             .when()
-            .post("/petclinic/api/pettypes")
+            .post(BASE_API_PATH + "/pettypes") // Используем константу
             .then()
             .statusCode(HttpStatus.CREATED.value())
             .extract()
@@ -131,7 +142,7 @@ class PetClinicRestApiTest {
             .contentType(ContentType.JSON)
             .body(petType2Json)
             .when()
-            .post("/petclinic/api/pettypes")
+            .post(BASE_API_PATH + "/pettypes") // Используем константу
             .then()
             .statusCode(HttpStatus.CREATED.value())
             .extract()
@@ -147,7 +158,7 @@ class PetClinicRestApiTest {
             .contentType(ContentType.JSON)
             .body(petType3Json)
             .when()
-            .post("/petclinic/api/pettypes")
+            .post(BASE_API_PATH + "/pettypes") // Используем константу
             .then()
             .statusCode(HttpStatus.CREATED.value())
             .extract()
@@ -166,7 +177,7 @@ class PetClinicRestApiTest {
             .contentType(ContentType.JSON)
             .body(specialty1Json)
             .when()
-            .post("/petclinic/api/specialties")
+            .post(BASE_API_PATH + "/specialties") // Используем константу
             .then()
             .statusCode(HttpStatus.CREATED.value())
             .extract()
@@ -182,7 +193,7 @@ class PetClinicRestApiTest {
             .contentType(ContentType.JSON)
             .body(specialty2Json)
             .when()
-            .post("/petclinic/api/specialties")
+            .post(BASE_API_PATH + "/specialties") // Используем константу
             .then()
             .statusCode(HttpStatus.CREATED.value())
             .extract()
@@ -195,21 +206,23 @@ class PetClinicRestApiTest {
         // НУЖНО получить имя специальности по её ID
         String spec1Name = given()
             .when()
-            .get("/petclinic/api/specialties/" + specId1)
+            .get(BASE_API_PATH + "/specialties/" + specId1) // Используем константу
             .then()
             .statusCode(HttpStatus.OK.value())
+            .body("name", notNullValue()) // Проверяем, что поле name не null
             .extract()
             .jsonPath()
-            .getString("name"); // Извлекаем имя специальности
+            .getString("name");
 
         String spec2Name = given()
             .when()
-            .get("/petclinic/api/specialties/" + specId2)
+            .get(BASE_API_PATH + "/specialties/" + specId2) // Используем константу
             .then()
             .statusCode(HttpStatus.OK.value())
+            .body("name", notNullValue()) // Проверяем, что поле name не null
             .extract()
             .jsonPath()
-            .getString("name"); // Извлекаем имя второй специальности
+            .getString("name");
 
         System.out.println("Имена специальностей: " + spec1Name + ", " + spec2Name);
 
@@ -224,13 +237,13 @@ class PetClinicRestApiTest {
                     }
                 ]
             }
-            """.formatted(specId1, spec1Name); // <-- Включаем id и name
+            """.formatted(specId1, spec1Name);
 
         int vetId1 = given()
             .contentType(ContentType.JSON)
             .body(vet1Json)
             .when()
-            .post("/petclinic/api/vets")
+            .post(BASE_API_PATH + "/vets") // Используем константу
             .then()
             .statusCode(HttpStatus.CREATED.value())
             .extract()
@@ -248,12 +261,12 @@ class PetClinicRestApiTest {
                     }
                 ]
             }
-            """.formatted(specId2, spec2Name); // <-- Включаем id и name
+            """.formatted(specId2, spec2Name);
         int vetId2 = given()
             .contentType(ContentType.JSON)
             .body(vet2Json)
             .when()
-            .post("/petclinic/api/vets")
+            .post(BASE_API_PATH + "/vets") // Используем константу
             .then()
             .statusCode(HttpStatus.CREATED.value())
             .extract()
@@ -276,12 +289,12 @@ class PetClinicRestApiTest {
                     }
                 ]
             }
-            """.formatted(specId1, spec1Name, specId2, spec2Name); // <-- Включаем id и name для обеих
+            """.formatted(specId1, spec1Name, specId2, spec2Name);
         int vetId3 = given()
             .contentType(ContentType.JSON)
             .body(vet3Json)
             .when()
-            .post("/petclinic/api/vets")
+            .post(BASE_API_PATH + "/vets") // Используем константу
             .then()
             .statusCode(HttpStatus.CREATED.value())
             .extract()
@@ -289,7 +302,5 @@ class PetClinicRestApiTest {
             .getInt("id");
 
         System.out.println("Созданы ветеринары с ID: " + vetId1 + ", " + vetId2 + ", " + vetId3);
-
-        // ... остальная часть теста ...
     }
 }
