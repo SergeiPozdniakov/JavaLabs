@@ -1,0 +1,18 @@
+2025-10-19 19:35:50 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "create table if not exists task (\000a    task_id INT [*]IDENTITY PRIMARY KEY,\000a    title VARCHAR(255),\000a    finished BOOLEAN,\000a    created_date TIMESTAMP\000a);"; ожидалось "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "create table if not exists task (\000a    task_id INT [*]IDENTITY PRIMARY KEY,\000a    title VARCHAR(255),\000a    finished BOOLEAN,\000a    created_date TIMESTAMP\000a);"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+create table if not exists task (
+    task_id INT IDENTITY PRIMARY KEY,
+    title VARCHAR(255),
+    finished BOOLEAN,
+    created_date TIMESTAMP
+); [42001-214]
+2025-10-19 19:37:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Синтаксическая ошибка в выражении SQL "create table if not exists task (\000a    task_id INT [*]IDENTITY PRIMARY KEY,\000a    title VARCHAR(255),\000a    finished BOOLEAN,\000a    created_date TIMESTAMP\000a);"; ожидалось "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "create table if not exists task (\000a    task_id INT [*]IDENTITY PRIMARY KEY,\000a    title VARCHAR(255),\000a    finished BOOLEAN,\000a    created_date TIMESTAMP\000a);"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+create table if not exists task (
+    task_id INT IDENTITY PRIMARY KEY,
+    title VARCHAR(255),
+    finished BOOLEAN,
+    created_date TIMESTAMP
+); [42001-214]
